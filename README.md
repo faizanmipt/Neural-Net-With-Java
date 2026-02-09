@@ -1,6 +1,6 @@
 # Neural Network Forward Propagation Performance Test
 
-A high-performance Java implementation for measuring multi-threaded neural network forward pass throughput across varying thread counts. This test demonstrates scaling behavior from physical to logical CPU cores using a fully-connected network architecture.
+Java implementation for measuring multi-threaded neural network forward pass throughput across varying thread counts. This test demonstrates scaling behavior from physical to logical CPU cores using a fully-connected network architecture.
 
 ## Overview
 
@@ -193,33 +193,5 @@ For different hardware configurations:
    ```java
    int batch = 256;  // Larger batches amortize overhead
    ```
-
-## Troubleshooting
-
-### Low Thread Scaling
-
-- Ensure JVM warmup completes before measurement
-- Check CPU frequency scaling (disable turbo boost)
-- Verify process priority (use nice or renice)
-
-### High Variance
-
-- Increase iteration count (`iters`)
-- Reduce system load during test
-- Use CPU pinning (taskset on Linux)
-
-### Memory Issues
-
-- Reduce batch size if OutOfMemoryError occurs
-- Increase heap size: `java -Xmx256m NetworkForwardPassPerformance`
-
-## Contributing
-
-Improvements welcome:
-
-1. Additional network topologies
-2. Different activation functions (Sigmoid, Tanh, Leaky ReLU)
-3. Layer normalization support
-4. Test comparison with native BLAS libraries
 
 
